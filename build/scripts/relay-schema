@@ -1,0 +1,30 @@
+#!/usr/bin/env node_modules/.bin/babel-node --stage=0
+
+import fs from 'fs';
+import path from 'path';
+import {graphql} from 'graphql';
+import {introspectionQuery, printSchema} from 'graphql/utilities';
+import Schema from './../../data/schema';
+
+const rootDir = path.join(__dirname, './../../');
+const destDir = path.join(rootDir, './dist');
+
+(() => {
+	graphql(Schema, introspectionQuery)
+		.then(result=> {
+			if (result.errors) {
+				throw new Error(`ERROR: ${JSON.stringify(result.errors, null, 2)}`);
+			}
+			fs.writeFileSync(
+				path.join(destDir, './schema.json'),
+				JSON.stringify(result, null, 2)
+			);
+		})
+		.then(()=> {
+			const schemaGraphqlDest = path.join(destDir, './schema.graphql');
+			fs.writeFileSync(schemaGraphqlDest, printSchema(Schema));
+		})
+		.catch(error=> {
+			console.error(error);
+		});
+})();

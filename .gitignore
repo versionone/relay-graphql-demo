@@ -1,0 +1,26 @@
+# IDE
+# =========
+.idea/
+
+# Node
+# =========
+
+# Logs
+# ---------
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+# ---------
+pids
+*.pid
+*.seed
+
+# Dependencies
+# ---------
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# Build output
+/dist

@@ -1,0 +1,44 @@
+#!/usr/bin/env node_modules/.bin/babel-node --stage=0
+
+import gaze from 'gaze';
+import {green, yellow} from 'colors';
+import path from 'path';
+import {spawn} from 'child_process';
+
+const rootDir = path.join(__dirname, './../../');
+const jsExtension = path.join('**/*.js');
+
+const dirs = [
+//  path.join(rootDir, 'app', jsExtension),
+//  path.join(rootDir, 'test', jsExtension),
+//  path.join(rootDir, 'data', jsExtension),
+	path.join(rootDir, 'build', jsExtension)
+];
+
+const lint = () => {
+	process.stdout.write(yellow('Linting...') + '\n');
+	const linter = spawn('./scripts/lint', [], {stdio: 'inherit'});
+
+	if (linter.stdout) {
+		linter.stdout.on('data', (data) => {
+			process.stdout.write(data + '\n');
+		});
+	}
+
+	if (linter.stderr) {
+		linter.stderr.on('data', (data) => {
+			process.stderr.write(data + '\n');
+		});
+	}
+
+	linter.on('exit', (code) => {
+		if (code === 0) {
+			process.stdout.write(green('✓ 0 problems (0 errors, 0 warnings)\n\n'));
+		}
+	});
+};
+
+gaze(dirs, function (filepath) {
+	this.on('all', (event, filepath) => lint());
+	lint();
+});
