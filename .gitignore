@@ -23,4 +23,7 @@ pids
 node_modules
 
 # Build output
-/dist
+/public/build
+/build/schema.graphql
+/build/schema.json
+/build/webpack-stats.json

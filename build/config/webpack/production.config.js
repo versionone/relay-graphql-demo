@@ -21,7 +21,7 @@ export default {
 			})
 		}),
 		new WriteStatsPlugin({
-			target: path.join(__dirname, '..', '..', 'webpack-stats.json')
+			target: path.join(__dirname, '..', '..', '..', 'build', 'webpack-stats.json')
 		})
 	]
 };
