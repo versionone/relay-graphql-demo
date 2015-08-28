@@ -13,7 +13,7 @@ export default {
 		bundle: [
 			`webpack-dev-server/client?${publicPath}`,
 			'webpack/hot/only-dev-server',
-			path.join(rootDir, 'app', 'client.js')
+			path.join(rootDir, 'src', 'app', 'client.js')
 		]
 	},
 	output: {

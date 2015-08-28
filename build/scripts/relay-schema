@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import {graphql} from 'graphql';
 import {introspectionQuery, printSchema} from 'graphql/utilities';
-import Schema from './../../data/schema';
+import Schema from './../../src/data/schema';
 
 const rootDir = path.join(__dirname, './../../');
 const destDir = path.join(rootDir, './build');
