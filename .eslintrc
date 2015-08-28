@@ -121,7 +121,10 @@
 	"yoda": 2,
 	"indent": [
 	  2,
-	  "tab"
+	  "tab",
+	  {
+		"SwitchCase": 1
+	  }
 	],
 	"brace-style": [
 	  2,
@@ -173,6 +176,7 @@
 		"max": 2
 	  }
 	],
+	"no-mixed-spaces-and-tabs": [2],
 	"no-nested-ternary": 2,
 	"no-new-object": 2,
 	"no-spaced-func": 2,
@@ -210,7 +214,7 @@
 	"space-infix-ops": 2,
 	"space-return-throw-case": 2,
 	"spaced-comment": [
-	  2,
+	  0,
 	  "always",
 	  {
 		"exceptions": [
@@ -223,7 +227,7 @@
 		]
 	  }
 	],
-	"react/display-name": 1,
+	"react/display-name": 0,
 	"react/jsx-curly-spacing": [
 	  2,
 	  "never",
