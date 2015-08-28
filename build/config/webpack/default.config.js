@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import {WriteStatsPlugin} from './utils/plugins';
-import {env} from './../env.config';
+import {env, graphqlPath} from './../env.config';
 
 const rootDir = path.join(__dirname, '..', '..', '..');
 
@@ -11,7 +11,7 @@ export default {
 	target: 'web',
 	externals: undefined,
 	entry: {
-		bundle: path.join(rootDir, 'app', 'client.js')
+		bundle: path.join(rootDir, 'src', 'app', 'client.js')
 	},
 	output: {
 		path: path.join(rootDir, 'public', 'build'),
@@ -36,7 +36,8 @@ export default {
 		new webpack.DefinePlugin({
 			'process.env': JSON.stringify({
 				BROWSER: true,
-				NODE_ENV: env
+				NODE_ENV: env,
+				GRAPHQL_PATH: graphqlPath
 			})
 		}),
 		new WriteStatsPlugin({

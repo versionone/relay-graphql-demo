@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import fs from 'fs';
+import {env} from './../env.config';
 
 const rootDir = path.join(__dirname, '..', '..', '..');
 
@@ -38,7 +39,7 @@ export default {
 		new webpack.DefinePlugin({
 			'process.env': JSON.stringify({
 				BROWSER: false,
-				NODE_ENV: process.env.NODE_ENV || 'development'
+				NODE_ENV: env
 			})
 		})
 	]
