@@ -30,6 +30,7 @@ npm run watch
 ```shell
 npm test # run all specs
 npm test grepPattern # only run the specs matching pattern
+npm run test:debug # run specs for debugging
 
 npm run lint #lint build, tests, and source files
 npm run lint:watch #lint and watch build, tests, and source files

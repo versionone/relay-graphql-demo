@@ -6,6 +6,7 @@ require('babel/register')({
 var path = require('path');
 var rootDir = path.join('.', '..', '..', '..');
 var webpackConfig = require('./../../../webpack.config');
+var isDebug = process.env.NODE_TEST === 'debug';
 module.exports = function(config) {
 	config.set({
 		basePath: '',
@@ -20,13 +21,13 @@ module.exports = function(config) {
 		reporters: ['progress'],
 		port: 9876,
 		colors: true,
-		autoWatch: false,
-		singleRun: true,
+		autoWatch: isDebug,
+		singleRun: !isDebug,
 
 		// level of logging
 		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
 		logLevel: config.LOG_INFO,
-		browsers: ['PhantomJS'],
+		browsers: [isDebug ? 'Chrome' : 'PhantomJS'],
 		plugins: [
 			'karma-phantomjs-launcher',
 			'karma-chrome-launcher',

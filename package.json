@@ -22,7 +22,8 @@
     "server:watch": "./build/scripts/server-watch",
     "watch": "./build/scripts/watch",
     "webpack:watch": "./build/scripts/webpack-watch",
-    "test": "./build/scripts/test"
+    "test": "./build/scripts/test",
+    "test:debug": "./build/scripts/test-debug"
   },
   "dependencies": {
     "babel": "5.8.21",
