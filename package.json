@@ -21,7 +21,8 @@
     "relay-schema:watch": "./build/scripts/relay-schema-watch",
     "server:watch": "./build/scripts/server-watch",
     "watch": "./build/scripts/watch",
-    "webpack:watch": "./build/scripts/webpack-watch"
+    "webpack:watch": "./build/scripts/webpack-watch",
+    "test": "./build/scripts/test"
   },
   "dependencies": {
     "babel": "5.8.21",
@@ -40,22 +41,36 @@
     "react": "0.14.0-beta3",
     "react-dom": "0.14.0-beta3",
     "react-relay": "0.1.1",
-    "react-router": "1.0.0-beta3",
-    "underscore": "^1.8.3"
+    "react-router": "1.0.0-beta3"
   },
   "devDependencies": {
     "babel-core": "5.8.22",
     "babel-eslint": "4.0.10",
     "babel-loader": "5.3.2",
     "babel-relay-plugin": "0.1.2",
+    "chai": "3.2.0",
     "colors": "1.1.2",
     "concurrently": "0.1.1",
     "eslint": "1.1.0",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "3.2.3",
     "gaze": "0.5.1",
+    "karma": "0.13.9",
+    "karma-chai": "0.1.0",
+    "karma-chai-sinon": "0.1.5",
+    "karma-chrome-launcher": "0.2.0",
+    "karma-mocha": "0.2.0",
+    "karma-phantomjs-launcher": "0.2.1",
+    "karma-sinon": "1.0.4",
+    "karma-sourcemap-loader": "0.3.5",
+    "karma-webpack": "1.7.0",
+    "mocha": "2.2.5",
+    "phantomjs": "1.9.18",
+    "phantomjs-polyfill": "0.0.1",
     "react-hot-loader": "1.2.8",
     "rimraf": "2.4.2",
+    "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",
+    "sinon-chai": "2.8.0",
     "supervisor": "0.7.1",
     "webpack": "1.11.0",
     "webpack-dev-server": "1.10.1"
