@@ -106,7 +106,11 @@ const articleType = new GraphQLObjectType({
 	name: 'Article',
 	description: 'A blog article',
 	fields: () => ({
-		id: globalIdField('Article')
+		id: globalIdField('Article'),
+		title: {
+			type: GraphQLString,
+			description: 'The title of the blog'
+		}
 	}),
 	interfaces: [nodeInterface]
 });
