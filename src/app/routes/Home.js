@@ -7,10 +7,10 @@ export class HomeRelayRoute extends Route {
 	static routeName = 'HomeRoute';
 	static path = path;
 	static queries = {
-		article: (Component) => Relay.QL`
+		blog: (Component) => Relay.QL`
 			query {
-				article(id: $id) {
-					${Component.getFragment('article')}
+				blog {
+					${Component.getFragment('blog')}
 				}
 			}
 		`
