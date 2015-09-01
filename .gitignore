@@ -27,3 +27,5 @@ node_modules
 /build/schema.graphql
 /build/schema.json
 /build/webpack-stats.json
+
+*.orig

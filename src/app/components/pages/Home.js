@@ -3,18 +3,6 @@ import Relay from 'react-relay';
 import ArticleFeed from './../ArticleFeed';
 
 export default class Home extends React.Component {
-	static propTypes = {
-		blog: PropTypes.shape({
-			id: PropTypes.string.isRequired,
-			title: PropTypes.string.isRequired
-		})
-	};
-	static defaultProps = {};
-
-	constructor(props, context) {
-		super(props, context);
-	}
-
 	render() {
 		const {
 			blog,

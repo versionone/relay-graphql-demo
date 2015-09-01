@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import Router from 'react-router';
-import Relay, {Route} from 'react-relay';
+import Relay from 'react-relay';
 
 export default class extends React.Component {
 	static propTypes = {
