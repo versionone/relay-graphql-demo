@@ -9,8 +9,8 @@ import path from 'path';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import {green, red} from 'colors';
-import Html from './components/Html';
-import {isProduction, port, graphqlPath, graphqlPort, devPort} from './../build/config/env.config';
+import Html from './components/root/Html';
+import {isProduction, port, graphqlPath, graphqlPort, devPort} from './../../build/config/env.config';
 //import Router from 'react-router';
 //import Location from 'react-router/lib/Location';
 //import Application from './components/containers/Application';
@@ -47,12 +47,12 @@ if (!isProduction) {
 
 app.use(compress());
 app.use(bodyparser());
-app.use(statics(path.join(__dirname, './../public')));
+app.use(statics(path.join(__dirname, './../../public')));
 
 app.use(function* render() {
 	let stats;
 	try {
-		stats = require('./../build/webpack-stats.json');
+		stats = require('./../../build/webpack-stats.json');
 	} catch (ex) {
 		stats = {};
 		console.error(red('Cannot find webpack-stats.json'));

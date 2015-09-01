@@ -1,6 +1,6 @@
 import React from 'react';
 import Relay, {Route} from 'react-relay';
-import Article from './../components/pages/Home';
+import Home from './../components/pages/Home';
 
 const path = '/';
 export class HomeRelayRoute extends Route {
@@ -18,5 +18,5 @@ export class HomeRelayRoute extends Route {
 }
 
 export const HomeRoute = (
-	<Route component={Article} path={path} />
+	<Route component={Home} path={path} />
 );

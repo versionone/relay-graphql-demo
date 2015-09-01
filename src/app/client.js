@@ -5,7 +5,7 @@ import BrowserHistory from 'react-router/lib/BrowserHistory';
 import HashHistory from 'react-router/lib/HashHistory';
 import Relay from 'react-relay';
 import DefaultNetworkLayer from 'react-relay/lib/RelayDefaultNetworkLayer';
-import {routes, relayRoutes} from './routes';
+import {routes, relayRoutes} from './routes.js';
 
 Relay.injectNetworkLayer(new DefaultNetworkLayer(process.env.GRAPHQL_PATH));
 
