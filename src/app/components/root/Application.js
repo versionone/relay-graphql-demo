@@ -1,13 +1,13 @@
 import React, {PropTypes} from 'react';
 import Router from 'react-router';
-import Relay from 'react-relay';
+import Relay, {Route} from 'react-relay';
 
 export default class extends React.Component {
 	static propTypes = {
 		children: PropTypes.any,
 		history: PropTypes.object,
-		relayRoutes: PropTypes.arrayOf(PropTypes.object).isRequired,
-		router: PropTypes.object.isRequired,
+		relayRoutes: PropTypes.arrayOf(PropTypes.func).isRequired,
+		router: PropTypes.object,
 		routes: PropTypes.arrayOf(PropTypes.object).isRequired
 	};
 
@@ -46,9 +46,8 @@ function createRouter(Route, props) {
 	const {
 		relayRoutes
 		} = this.props;
-	const relayRouteElements = Object.keys(relayRoutes)
-		.filter(route=> isMatchingRoute(route, props.route))
-		.map(route => relayRoutes[route]);
+	const relayRouteElements = relayRoutes
+		.filter(route=> isMatchingRoute(route, props.route));
 
 	if (!relayRouteElements.length) {
 		console.error(`ERROR: Path ${props.route.path} does not match any Relay Routes`);
