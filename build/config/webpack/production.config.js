@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import {WriteStatsPlugin} from './utils/plugins';
+import {graphqlPath} from './../env.config';
 
 export default {
 	name: 'Production',
@@ -17,7 +18,9 @@ export default {
 		new webpack.DefinePlugin({
 			'process.env': JSON.stringify({
 				BROWSER: true,
-				NODE_ENV: 'production'
+				NODE_ENV: 'production',
+				GRAPHQL_PATH: graphqlPath
+
 			})
 		}),
 		new WriteStatsPlugin({

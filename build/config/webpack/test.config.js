@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import {WriteStatsPlugin} from './utils/plugins';
-import {devPort} from './../env.config';
+import {devPort, graphqlPath} from './../env.config';
 
 const publicPath = `http://localhost:${devPort}/`;
 const rootDir = path.join(__dirname, '..', '..', '..');
@@ -14,7 +14,8 @@ export default {
 		new webpack.DefinePlugin({
 			'process.env': JSON.stringify({
 				BROWSER: true,
-				NODE_ENV: 'development'
+				NODE_ENV: 'development',
+				GRAPHQL_PATH: graphqlPath
 			})
 		}),
 		new WriteStatsPlugin({
